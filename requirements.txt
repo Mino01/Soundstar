@@ -1,0 +1,30 @@
+# Core Dependencies
+torch>=2.0.0
+torchaudio>=2.0.0
+numpy
+scipy
+
+# Transformer/LM Dependencies
+transformers
+accelerate
+tokenizers
+
+# Audio Codec Dependencies (EnCodec/SoundStream)
+# We will use the implementation from torchaudio or a dedicated library
+# For now, we'll assume torchaudio is sufficient for basic audio processing
+
+# DDSP Dependencies
+# DDSP is primarily implemented using PyTorch, but we might need specific
+# libraries for differentiable DSP components if not implementing from scratch.
+# For now, we assume core PyTorch is sufficient.
+
+# Utility
+tqdm
+pydantic
+typer
+
+# Development/Testing
+pytest
+black
+isort
+flake8

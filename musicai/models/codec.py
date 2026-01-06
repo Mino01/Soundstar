@@ -3,14 +3,14 @@ import torch.nn as nn
 import numpy as np
 from typing import Tuple
 
-class AudioCodec(nn.Module):
+class RAVECodec(nn.Module):
     """
-    A simplified placeholder for the Neural Audio Codec (EnCodec-style).
-    This module is responsible for compressing raw audio into a discrete latent space
-    and reconstructing it.
+    The RAVE Codec (Realtime Audio Variational autoEncoder).
+    This module provides the high-fidelity, low-dimensional, and real-time capable
+    latent space for the ultimate architecture.
     
-    For this implementation, the 'encode' and 'decode' methods will be simple
-    placeholders, as the full implementation of a high-fidelity codec is complex.
+    The 'encode' method is a placeholder for the RAVE Encoder.
+    The 'decode_latent' method is a placeholder for the RAVE Decoder.
     """
     def __init__(self, 
                  sample_rate: int = 44100, 
@@ -21,69 +21,72 @@ class AudioCodec(nn.Module):
         self.latent_dim = latent_dim
         self.n_quantizers = n_quantizers
         
-        # Placeholder for the codebook
+        # Placeholder for the codebook (RAVE uses a continuous latent space, 
+        # but we keep the quantizer concept for the Transformer's input/output)
         self.codebook_size = 1024
         self.codebook = nn.Parameter(torch.randn(n_quantizers, self.codebook_size, latent_dim))
         
-        print(f"AudioCodec initialized: Latent Dim={latent_dim}, Quantizers={n_quantizers}")
+        # Placeholder for the RAVE Decoder (maps latent vector to raw audio)
+        self.rave_decoder = nn.Sequential(
+            nn.Linear(latent_dim, 2048),
+            nn.ReLU(),
+            nn.Linear(2048, sample_rate * 5) # Simulating 5 seconds of audio output
+        )
+        
+        print(f"RAVECodec initialized: Latent Dim={latent_dim}, Quantizers={n_quantizers}")
 
     def encode(self, raw_audio: torch.Tensor) -> torch.Tensor:
         """
-        Placeholder for the Encoder and Quantizer.
-        Simulates converting raw audio to a sequence of discrete tokens.
+        Placeholder for the RAVE Encoder.
+        Simulates converting raw audio to a single continuous RAVE latent vector (z).
         
         Args:
             raw_audio (torch.Tensor): Raw audio waveform (batch_size, n_samples).
             
         Returns:
-            torch.Tensor: Discrete audio tokens (batch_size, n_frames, n_quantizers).
+            torch.Tensor: Continuous RAVE latent vector (batch_size, latent_dim).
         """
         batch_size, n_samples = raw_audio.shape
         
-        # Simplification: Assume a fixed number of frames
-        n_frames = n_samples // 1024 # Arbitrary downsampling factor
+        # Simplification: return a single latent vector for the entire audio clip
+        latent_vector = torch.randn(batch_size, self.latent_dim, device=raw_audio.device)
         
-        # Simulate latent representation (batch_size, n_frames, latent_dim)
-        latent = torch.randn(batch_size, n_frames, self.latent_dim, device=raw_audio.device)
-        
-        # Simulate quantization to discrete tokens (batch_size, n_frames, n_quantizers)
-        tokens = torch.randint(0, self.codebook_size, (batch_size, n_frames, self.n_quantizers), device=raw_audio.device)
-        
-        return tokens
+        return latent_vector
 
-    def decode(self, tokens: torch.Tensor) -> torch.Tensor:
+    def decode_latent(self, latent_vector: torch.Tensor) -> torch.Tensor:
         """
-        Placeholder for the Decoder.
-        Simulates converting discrete tokens back to raw audio.
+        Placeholder for the RAVE Decoder.
+        Simulates converting the continuous RAVE latent vector back to raw audio.
         
         Args:
-            tokens (torch.Tensor): Discrete audio tokens (batch_size, n_frames, n_quantizers).
+            latent_vector (torch.Tensor): Continuous RAVE latent vector (batch_size, latent_dim).
             
         Returns:
             torch.Tensor: Raw audio waveform (batch_size, n_samples).
         """
-        batch_size, n_frames, _ = tokens.shape
+        batch_size = latent_vector.shape[0]
         
-        # Simplification: Assume a fixed number of samples
-        n_samples = n_frames * 1024
+        # Pass through the placeholder decoder
+        raw_audio = self.rave_decoder(latent_vector)
         
-        # Simulate waveform reconstruction
-        raw_audio = torch.randn(batch_size, n_samples, device=tokens.device)
+        # Reshape to (batch_size, n_samples)
+        n_samples = self.sample_rate * 5
+        raw_audio = raw_audio.view(batch_size, n_samples)
         
         return raw_audio
 
 # Example usage
 if __name__ == '__main__':
-    codec = AudioCodec()
+    codec = RAVECodec()
     
     # Simulate 5 seconds of audio
     n_samples = codec.sample_rate * 5
     raw_audio_in = torch.randn(1, n_samples)
     
     # Encode
-    tokens = codec.encode(raw_audio_in)
-    print(f"Encoded tokens shape: {tokens.shape}")
+    latent_vector = codec.encode(raw_audio_in)
+    print(f"Encoded latent vector shape: {latent_vector.shape}")
     
     # Decode
-    raw_audio_out = codec.decode(tokens)
+    raw_audio_out = codec.decode_latent(latent_vector)
     print(f"Decoded audio shape: {raw_audio_out.shape}")

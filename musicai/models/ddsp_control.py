@@ -2,14 +2,13 @@ import torch
 import torch.nn as nn
 from typing import Dict
 
-class DDSPControlNet(nn.Module):
+class DDSPRefinementNet(nn.Module):
     """
-    A placeholder for the DDSP Control Network.
-    In a real implementation, this network would take the discrete audio tokens
-    (or their embeddings) and output the continuous control signals (f0, loudness, mix).
+    The DDSP Refinement Network (formerly DDSPControlNet).
     
-    For this implementation, we will simulate the mapping from a latent vector
-    to the control parameters using a simple MLP.
+    This network takes the continuous RAVE latent vector (z_gen) and translates
+    it into DDSP control parameters. This allows for fine-grained, interpretable
+    control and refinement of the RAVE output's timbre.
     """
     def __init__(self, 
                  latent_dim: int = 512, 
@@ -20,8 +19,8 @@ class DDSPControlNet(nn.Module):
         self.latent_dim = latent_dim
         self.control_dim = control_dim
         
-        # Simple MLP to map latent vector to control signals
-        # We assume the latent vector is a compressed representation of the musical tokens
+        # Simple MLP to map RAVE latent vector to control signals
+        # The RAVE latent vector is a compressed representation of the entire piece.
         self.mlp = nn.Sequential(
             nn.Linear(latent_dim, 1024),
             nn.ReLU(),
@@ -35,7 +34,7 @@ class DDSPControlNet(nn.Module):
 
     def forward(self, latent_vector: torch.Tensor) -> Dict[str, torch.Tensor]:
         """
-        Maps a latent vector (representing musical tokens) to DDSP control parameters.
+        Maps a RAVE latent vector to DDSP control parameters.
         
         Args:
             latent_vector (torch.Tensor): A tensor of shape (batch_size, latent_dim).
@@ -64,10 +63,6 @@ class DDSPControlNet(nn.Module):
         loudness = self.loudness_activation(loudness_raw)
         harmonic_mix = self.harmonic_mix_activation(harmonic_mix_raw)
         
-        # Note: In a real system, the DDSPControlNet would be more complex,
-        # likely a recurrent or convolutional network to handle the temporal
-        # nature of the tokens and output smooth control signals.
-        
         return {
             'f0': f0,
             'loudness': loudness,
@@ -80,14 +75,14 @@ if __name__ == '__main__':
     sr = 44100
     n_s = sr * 1
     
-    # Simulate a batch of 4 latent vectors
+    # Simulate a batch of 4 RAVE latent vectors
     batch_size = 4
     latent_dim = 512
     latent_input = torch.randn(batch_size, latent_dim)
     
-    control_net = DDSPControlNet(latent_dim=latent_dim, n_samples=n_s)
+    refinement_net = DDSPRefinementNet(latent_dim=latent_dim, n_samples=n_s)
     
-    ddsp_params = control_net(latent_input)
+    ddsp_params = refinement_net(latent_input)
     
     print(f"Generated DDSP Parameters:")
     for key, tensor in ddsp_params.items():

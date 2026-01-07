@@ -3,15 +3,15 @@ import numpy as np
 from typing import Optional, Dict, Any
 
 # Import all necessary components for the Tri-Hybrid Architecture
-from soundstar.models.codec import AudioCodec as RAVECodec # RAVE is the new Codec
-from soundstar.models.transformer import StructuralTransformer as StructuralTransformerRAVE
-from soundstar.models.ddsp_control import DDSPControlNet as DDSPRefinementNet
-from soundstar.models.ddsp_core import DDSPCore
-from soundstar.core.control_encoder import ControlEncoder
+from starwood.models.codec import AudioCodec as RAVECodec # RAVE is the new Codec
+from starwood.models.transformer import StructuralTransformer as StructuralTransformerRAVE
+from starwood.models.ddsp_control import DDSPControlNet as DDSPRefinementNet
+from starwood.models.ddsp_core import DDSPCore
+from starwood.core.control_encoder import ControlEncoder
 
-class SoundstarEngine:
+class StarwoodEngine:
     """
-    The core engine for the Soundstar framework, implementing the RAVE-DDSP-Transformer
+    The core engine for the Starwood framework, implementing the RAVE-DDSP-Transformer
     Tri-Hybrid Architecture for ultimate sound quality and control.
     """
     def __init__(self, device: str = "cuda" if torch.cuda.is_available() else "cpu"):
@@ -28,7 +28,7 @@ class SoundstarEngine:
         # Placeholder for the Ultimate Mixer (not implemented yet)
         # self.ultimate_mixer = UltimateMixer().to(self.device)
         
-        print(f"SoundstarEngine (Ultimate Tri-Hybrid) initialized on device: {self.device}")
+        print(f"StarwoodEngine (Ultimate Tri-Hybrid) initialized on device: {self.device}")
 
     def generate(self, 
                  prompt: str, 
@@ -75,7 +75,7 @@ class SoundstarEngine:
         print("5. Ultimate Mixer blends w_rave and w_ddsp for the final waveform.")
         
         # --- 6. Save Audio (Placeholder) ---
-        output_filename = f"soundstar_ultimate_output_{np.random.randint(1000, 9999)}.wav"
+        output_filename = f"starwood_ultimate_output_{np.random.randint(1000, 9999)}.wav"
         # self._save_audio(w_final, output_filename)
         
         print(f"--- Generation Complete ---")
@@ -91,7 +91,7 @@ class SoundstarEngine:
 
 # Example usage (will not run without model implementations)
 if __name__ == "__main__":
-    engine = SoundstarEngine()
+    engine = StarwoodEngine()
     audio_path = engine.generate(
         prompt="A powerful, epic orchestral track with a driving beat and a soaring violin melody.",
         duration=45,

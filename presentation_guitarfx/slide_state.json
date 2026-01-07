@@ -1,0 +1,100 @@
+{
+  "project_info": {
+    "title": "Starwood GuitarFX",
+    "created": 1767797164.631815,
+    "last_updated": 1767797315.61788,
+    "total_slides": 11
+  },
+  "slides": {
+    "title": "edited",
+    "problem": "edited",
+    "solution": "edited",
+    "how_it_works": "edited",
+    "technology": "edited",
+    "tonewood_library": "edited",
+    "products": "edited",
+    "competitive": "edited",
+    "market": "edited",
+    "roadmap": "edited",
+    "closing": "edited"
+  },
+  "outline": [
+    {
+      "id": "title",
+      "title": "Starwood GuitarFX",
+      "summary": "Title slide introducing the neural tonewood transformation technology with tagline: Make Any Guitar Sound Like a $10,000 Custom Shop Instrument",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "problem",
+      "title": "Premium Guitar Tone is Inaccessible to Most Players",
+      "summary": "Present the problem: Brazilian rosewood guitars cost $5,000-$50,000+, premium tonewoods are rare due to CITES restrictions, 95% of guitarists play instruments under $1,000",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "solution",
+      "title": "AI-Powered Tonewood Transformation",
+      "summary": "Introduce Starwood GuitarFX as the solution: neural network models acoustic properties of premium tonewoods, transforms any guitar's fundamental tonal character in real-time",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "how_it_works",
+      "title": "DDSP-Powered Neural Tonewood Modeling",
+      "summary": "Explain the technology flow: pickup captures signal, neural network analyzes and transforms, DDSP synthesis applies tonewood properties, output with premium character",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "technology",
+      "title": "Built on Proven AI Audio Technology",
+      "summary": "Detail the technical foundation: RAVE-DDSP-Transformer architecture, Tonewood Embedding Network, sub-10ms latency, peer-reviewed research basis",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "tonewood_library",
+      "title": "Premium Tonewood Presets at Your Fingertips",
+      "summary": "Showcase the tonewood library: Brazilian Rosewood, Cocobolo, Honduran Mahogany, Koa, and custom blend capabilities",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "products",
+      "title": "Three Products, One Revolutionary Technology",
+      "summary": "Present product lineup: Starwood FX Plugin ($149), Mobile App ($49), Hardware Unit ($299)",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "competitive",
+      "title": "The Only Product That Transforms Guitar Character",
+      "summary": "Compare with TonewoodAmp2 (generic effects) and Neural Amp Modeler (amp modeling) - Starwood uniquely offers tonewood transformation",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "market",
+      "title": "$1.2B Guitar Effects Market Growing 6% Annually",
+      "summary": "Present market opportunity: 50M+ guitarists worldwide, $1.2B effects market, AI effects as fastest growing segment",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "roadmap",
+      "title": "From Concept to Market in 18 Months",
+      "summary": "Timeline: Q1 2026 plugin beta, Q2 2026 mobile launch, Q4 2026 hardware prototype, Q2 2027 production",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    },
+    {
+      "id": "closing",
+      "title": "Every Guitar Deserves Premium Tone",
+      "summary": "Closing slide with call to action, contact information, and Starwood branding",
+      "image_plan": "Use a suitable image if needed",
+      "slide_template_key": ""
+    }
+  ]
+}

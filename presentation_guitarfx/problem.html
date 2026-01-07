@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 50%, #0D0D0D 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        .spotlight {
+            position: absolute;
+            top: -50px;
+            left: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse at center, rgba(139, 69, 19, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            min-height: 720px;
+            padding: 60px 80px;
+            align-items: center;
+        }
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #DAA520;
+            margin-bottom: 16px;
+        }
+        .main-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #F5DEB3;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .headline-description {
+            font-size: 16px;
+            color: #E8E8E8;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        .right-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        .stat-box {
+            background: rgba(139, 69, 19, 0.08);
+            border-left: 3px solid #8B4513;
+            padding: 24px;
+        }
+        .stat-icon {
+            font-size: 24px;
+            color: #DAA520;
+            margin-bottom: 12px;
+        }
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: #DAA520;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 14px;
+            color: #E8E8E8;
+            line-height: 1.4;
+        }
+        .wood-grain {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #8B4513 0%, #DAA520 25%, #8B4513 50%, #DAA520 75%, #8B4513 100%);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="spotlight"></div>
+        
+        <div class="content-wrapper">
+            <div class="left-section">
+                <div class="section-label">The Problem</div>
+                <h1 class="main-headline">Premium Guitar Tone is Inaccessible to Most Players</h1>
+                <p class="headline-description">The legendary sounds of Brazilian rosewood and other premium tonewoods remain out of reach for the vast majority of guitarists, locked behind prohibitive costs and increasing scarcity.</p>
+            </div>
+            
+            <div class="right-section">
+                <div class="stat-box">
+                    <i class="fas fa-dollar-sign stat-icon"></i>
+                    <div class="stat-number">$5K–$50K+</div>
+                    <div class="stat-label">Cost of Brazilian rosewood guitars, putting premium tone beyond most budgets</div>
+                </div>
+                
+                <div class="stat-box">
+                    <i class="fas fa-leaf stat-icon"></i>
+                    <div class="stat-number">CITES I</div>
+                    <div class="stat-label">Brazilian rosewood protection status—highest restriction, increasingly rare</div>
+                </div>
+                
+                <div class="stat-box">
+                    <i class="fas fa-users stat-icon"></i>
+                    <div class="stat-number">95%</div>
+                    <div class="stat-label">Of guitarists play instruments under $1,000, never experiencing premium tone</div>
+                </div>
+                
+                <div class="stat-box">
+                    <i class="fas fa-sliders-h stat-icon"></i>
+                    <div class="stat-number">Effects ≠ Tone</div>
+                    <div class="stat-label">Existing effects change sound, but not the fundamental tonal character</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wood-grain"></div>
+    </div>
+</body>
+</html>

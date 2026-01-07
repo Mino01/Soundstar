@@ -314,7 +314,7 @@ Recent advances in machine learning and neural networks have opened new possibil
 3. Network learns mapping from frequency response to elastic properties
 4. Can characterize: longitudinal Young's modulus, radial Young's modulus, shear modulus
 
-**Applications for Soundstar**:
+**Applications for Starwood**:
 - Train models on tonewood acoustic signatures
 - Predict tonal characteristics from physical properties
 - Generate synthetic tonewood profiles for sound synthesis
@@ -362,7 +362,7 @@ Recent advances in machine learning and neural networks have opened new possibil
 - Modal synthesis approach for string instruments
 - Learns physical parameters from audio
 
-### Proposed Architecture for Soundstar Tonewood Modeling
+### Proposed Architecture for Starwood Tonewood Modeling
 
 Based on the research, we propose a **Tonewood Neural Synthesis Engine** with the following components:
 
@@ -417,7 +417,7 @@ Output: Synthesized Audio Waveform
 
 ### Tonewood Parameter Database
 
-For Soundstar to synthesize boutique guitar sounds, we need a comprehensive database of tonewood parameters:
+For Starwood to synthesize boutique guitar sounds, we need a comprehensive database of tonewood parameters:
 
 | Tonewood | Density (kg/m³) | E_L (GPa) | E_R (GPa) | G_LR (GPa) | Sound Speed (m/s) | Damping |
 |----------|-----------------|-----------|-----------|------------|-------------------|---------|
@@ -448,7 +448,7 @@ For realistic boutique guitar sound synthesis, microphone characteristics must b
 | Neumann KM184 | 20Hz-20kHz (slight HF lift) | Minimal | Cardioid | Detailed, airy |
 | Shure SM57 | 40Hz-15kHz (presence peak) | Strong | Cardioid | Punchy, midrange |
 
-### Implementation Roadmap for Soundstar
+### Implementation Roadmap for Starwood
 
 1. **Phase 1**: Build tonewood parameter database from acoustic measurements
 2. **Phase 2**: Train tonewood embedding network on spectral analysis data

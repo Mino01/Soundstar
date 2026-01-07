@@ -1,6 +1,6 @@
 # Boutique Guitar Sound Synthesis Technical Specification
 
-**Project**: Soundstar  
+**Project**: Starwood  
 **Version**: 1.0  
 **Date**: January 2026  
 **Author**: Manus AI
@@ -9,9 +9,9 @@
 
 ## Executive Summary
 
-This technical specification documents the research findings and implementation guidelines for synthesizing **boutique guitar sounds** within the Soundstar framework. The specification covers three primary domains: **tonewood acoustic properties**, **microphone recording techniques**, and **AI/ML-based sound modeling**. By combining these elements, Soundstar can generate authentic, high-fidelity acoustic guitar sounds that capture the unique tonal characteristics of premium tonewoods such as Brazilian rosewood and Cocobolo.
+This technical specification documents the research findings and implementation guidelines for synthesizing **boutique guitar sounds** within the Starwood framework. The specification covers three primary domains: **tonewood acoustic properties**, **microphone recording techniques**, and **AI/ML-based sound modeling**. By combining these elements, Starwood can generate authentic, high-fidelity acoustic guitar sounds that capture the unique tonal characteristics of premium tonewoods such as Brazilian rosewood and Cocobolo.
 
-The proposed system leverages the **RAVE-DDSP-Transformer Tri-Hybrid Architecture** already established in Soundstar, extending it with a specialized **Tonewood Neural Synthesis Engine** that models the physical and acoustic properties of different wood combinations.
+The proposed system leverages the **RAVE-DDSP-Transformer Tri-Hybrid Architecture** already established in Starwood, extending it with a specialized **Tonewood Neural Synthesis Engine** that models the physical and acoustic properties of different wood combinations.
 
 ---
 
@@ -42,7 +42,7 @@ This specification aims to:
 1. Document the acoustic properties of premium tonewoods and their impact on guitar sound
 2. Establish microphone placement techniques for capturing authentic guitar tones
 3. Design an AI/ML architecture for synthesizing tonewood-specific sounds
-4. Provide implementation guidelines for integration with Soundstar's existing engine
+4. Provide implementation guidelines for integration with Starwood's existing engine
 
 ### 1.3 Scope
 
@@ -333,7 +333,7 @@ Two cardioid mics, 17cm apart, angled 110° apart (French broadcasting standard)
 
 ### 4.5 Microphone Modeling Parameters
 
-For Soundstar to simulate different microphone setups, the following parameters must be modeled:
+For Starwood to simulate different microphone setups, the following parameters must be modeled:
 
 ```python
 class MicrophoneModel:
@@ -351,7 +351,7 @@ class MicrophoneModel:
 
 ### 5.1 Overview
 
-The proposed **Tonewood Neural Synthesis Engine** extends Soundstar's RAVE-DDSP-Transformer architecture with specialized modules for modeling tonewood acoustic properties and microphone characteristics.
+The proposed **Tonewood Neural Synthesis Engine** extends Starwood's RAVE-DDSP-Transformer architecture with specialized modules for modeling tonewood acoustic properties and microphone characteristics.
 
 ### 5.2 Architecture Diagram
 
@@ -498,13 +498,13 @@ total_loss = (
 
 ## 6. Implementation Guidelines
 
-### 6.1 Integration with Soundstar Architecture
+### 6.1 Integration with Starwood Architecture
 
-The Tonewood Neural Synthesis Engine integrates with Soundstar's existing RAVE-DDSP-Transformer architecture as follows:
+The Tonewood Neural Synthesis Engine integrates with Starwood's existing RAVE-DDSP-Transformer architecture as follows:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    SOUNDSTAR TRI-HYBRID ENGINE                   │
+│                    STARWOOD TRI-HYBRID ENGINE                   │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  ┌─────────────┐   ┌─────────────┐   ┌─────────────────────┐   │
@@ -560,7 +560,7 @@ For real-time synthesis, the following optimizations are recommended:
 ### 7.1 Tonewood Configuration Endpoint
 
 ```
-POST /api/v1/soundstar/tonewood/configure
+POST /api/v1/starwood/tonewood/configure
 ```
 
 **Request Body**:
@@ -617,7 +617,7 @@ POST /api/v1/soundstar/tonewood/configure
 ### 7.2 Synthesis Endpoint
 
 ```
-POST /api/v1/soundstar/tonewood/synthesize
+POST /api/v1/starwood/tonewood/synthesize
 ```
 
 **Request Body**:
@@ -648,7 +648,7 @@ POST /api/v1/soundstar/tonewood/synthesize
 ### 7.3 Preset Retrieval Endpoint
 
 ```
-GET /api/v1/soundstar/tonewood/presets
+GET /api/v1/starwood/tonewood/presets
 ```
 
 **Response**:

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 50%, #0D0D0D 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        .spotlight {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(ellipse at center, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            min-height: 720px;
+            padding: 50px 70px;
+        }
+        .left-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #DAA520;
+            margin-bottom: 14px;
+        }
+        .main-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #F5DEB3;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+        .tech-specs {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+        .spec-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .spec-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(218, 165, 32, 0.15);
+            color: #DAA520;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+        .spec-content {
+            flex: 1;
+        }
+        .spec-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #F5DEB3;
+            margin-bottom: 4px;
+        }
+        .spec-description {
+            font-size: 13px;
+            color: #E8E8E8;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .architecture-stack {
+            width: 100%;
+            max-width: 420px;
+        }
+        .arch-layer {
+            padding: 20px 24px;
+            margin-bottom: 8px;
+            position: relative;
+        }
+        .layer-rave {
+            background: linear-gradient(90deg, rgba(218, 165, 32, 0.25) 0%, rgba(218, 165, 32, 0.1) 100%);
+            border-left: 4px solid #DAA520;
+        }
+        .layer-ddsp {
+            background: linear-gradient(90deg, rgba(139, 69, 19, 0.3) 0%, rgba(139, 69, 19, 0.1) 100%);
+            border-left: 4px solid #8B4513;
+        }
+        .layer-transformer {
+            background: linear-gradient(90deg, rgba(245, 222, 179, 0.15) 0%, rgba(245, 222, 179, 0.05) 100%);
+            border-left: 4px solid #F5DEB3;
+        }
+        .layer-embedding {
+            background: linear-gradient(90deg, rgba(232, 232, 232, 0.1) 0%, rgba(232, 232, 232, 0.03) 100%);
+            border-left: 4px solid #E8E8E8;
+        }
+        .layer-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 16px;
+            font-weight: 700;
+            color: #F5DEB3;
+            margin-bottom: 4px;
+        }
+        .layer-desc {
+            font-size: 12px;
+            color: #E8E8E8;
+            opacity: 0.8;
+        }
+        .research-section {
+            position: absolute;
+            bottom: 50px;
+            left: 70px;
+            right: 70px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+        .research-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .badge-icon {
+            font-size: 16px;
+            color: #DAA520;
+        }
+        .badge-text {
+            font-size: 12px;
+            color: #E8E8E8;
+            opacity: 0.7;
+        }
+        .wood-grain {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #8B4513 0%, #DAA520 25%, #8B4513 50%, #DAA520 75%, #8B4513 100%);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="spotlight"></div>
+        
+        <div class="content-wrapper">
+            <div class="left-section">
+                <div class="section-label">The Technology</div>
+                <h1 class="main-headline">Built on Proven AI Audio Technology</h1>
+                
+                <div class="tech-specs">
+                    <div class="spec-item">
+                        <div class="spec-icon"><i class="fas fa-microchip"></i></div>
+                        <div class="spec-content">
+                            <div class="spec-title">Tri-Hybrid Architecture</div>
+                            <div class="spec-description">RAVE + DDSP + Transformer working in concert for unprecedented audio quality and control</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><i class="fas fa-fingerprint"></i></div>
+                        <div class="spec-content">
+                            <div class="spec-title">256-Dim Tonewood Embeddings</div>
+                            <div class="spec-description">Each tonewood's acoustic fingerprint captured in a learnable vector space</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><i class="fas fa-tachometer-alt"></i></div>
+                        <div class="spec-content">
+                            <div class="spec-title">Sub-10ms Latency</div>
+                            <div class="spec-description">Real-time performance with imperceptible delay for live playing</div>
+                        </div>
+                    </div>
+                    <div class="spec-item">
+                        <div class="spec-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <div class="spec-content">
+                            <div class="spec-title">Peer-Reviewed Foundation</div>
+                            <div class="spec-description">Built on research published at ICASSP, NeurIPS, and DAFx conferences</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-section">
+                <div class="architecture-stack">
+                    <div class="arch-layer layer-rave">
+                        <div class="layer-name">RAVE Latent Space</div>
+                        <div class="layer-desc">Real-time audio variational encoding for high-fidelity synthesis</div>
+                    </div>
+                    <div class="arch-layer layer-ddsp">
+                        <div class="layer-name">DDSP Synthesis Core</div>
+                        <div class="layer-desc">Differentiable signal processing for interpretable timbre control</div>
+                    </div>
+                    <div class="arch-layer layer-transformer">
+                        <div class="layer-name">Structural Transformer</div>
+                        <div class="layer-desc">Attention-based modeling of musical structure and coherence</div>
+                    </div>
+                    <div class="arch-layer layer-embedding">
+                        <div class="layer-name">Tonewood Embedding Network</div>
+                        <div class="layer-desc">Acoustic property encoding: density, Young's modulus, damping</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="research-section">
+            <div class="research-badge">
+                <i class="fas fa-file-alt badge-icon"></i>
+                <span class="badge-text">ICASSP 2024</span>
+            </div>
+            <div class="research-badge">
+                <i class="fas fa-file-alt badge-icon"></i>
+                <span class="badge-text">NeurIPS Audio</span>
+            </div>
+            <div class="research-badge">
+                <i class="fas fa-file-alt badge-icon"></i>
+                <span class="badge-text">DAFx Conference</span>
+            </div>
+            <div class="research-badge">
+                <i class="fas fa-file-alt badge-icon"></i>
+                <span class="badge-text">Google Magenta</span>
+            </div>
+        </div>
+        
+        <div class="wood-grain"></div>
+    </div>
+</body>
+</html>

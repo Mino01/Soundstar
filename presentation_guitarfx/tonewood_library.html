@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 50%, #0D0D0D 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        .spotlight {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(ellipse at center, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+            padding: 50px 80px;
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #DAA520;
+            margin-bottom: 12px;
+        }
+        .main-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 40px;
+            font-weight: 700;
+            color: #F5DEB3;
+            line-height: 1.2;
+        }
+        .tonewood-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+        }
+        .tonewood-item {
+            background: rgba(30, 30, 30, 0.6);
+            padding: 24px 16px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .tonewood-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+        }
+        .tonewood-item.brazilian::before { background: linear-gradient(90deg, #4A1C1C, #8B4513); }
+        .tonewood-item.cocobolo::before { background: linear-gradient(90deg, #8B4513, #D2691E); }
+        .tonewood-item.mahogany::before { background: linear-gradient(90deg, #6B3A2E, #A0522D); }
+        .tonewood-item.koa::before { background: linear-gradient(90deg, #B8860B, #DAA520); }
+        .tonewood-item.custom::before { background: linear-gradient(90deg, #DAA520, #F5DEB3, #DAA520); }
+        .tonewood-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        .tonewood-item.brazilian .tonewood-icon { color: #8B4513; }
+        .tonewood-item.cocobolo .tonewood-icon { color: #D2691E; }
+        .tonewood-item.mahogany .tonewood-icon { color: #A0522D; }
+        .tonewood-item.koa .tonewood-icon { color: #DAA520; }
+        .tonewood-item.custom .tonewood-icon { color: #F5DEB3; }
+        .tonewood-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: #F5DEB3;
+            margin-bottom: 8px;
+        }
+        .tonewood-origin {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #DAA520;
+            margin-bottom: 12px;
+            opacity: 0.8;
+        }
+        .tonewood-traits {
+            list-style: none;
+            font-size: 12px;
+            color: #E8E8E8;
+            line-height: 1.8;
+        }
+        .tonewood-traits li {
+            opacity: 0.85;
+        }
+        .bottom-note {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 14px;
+            color: #E8E8E8;
+            opacity: 0.7;
+        }
+        .bottom-note span {
+            color: #DAA520;
+        }
+        .wood-grain {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #8B4513 0%, #DAA520 25%, #8B4513 50%, #DAA520 75%, #8B4513 100%);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="spotlight"></div>
+        
+        <div class="content-wrapper">
+            <div class="header-section">
+                <div class="section-label">Tonewood Library</div>
+                <h1 class="main-headline">Premium Tonewood Presets at Your Fingertips</h1>
+            </div>
+            
+            <div class="tonewood-grid">
+                <div class="tonewood-item brazilian">
+                    <div class="tonewood-icon"><i class="fas fa-gem"></i></div>
+                    <h3 class="tonewood-name">Brazilian Rosewood</h3>
+                    <div class="tonewood-origin">Dalbergia Nigra</div>
+                    <ul class="tonewood-traits">
+                        <li>Rich, complex overtones</li>
+                        <li>Legendary sustain</li>
+                        <li>Deep bass response</li>
+                        <li>Shimmering trebles</li>
+                    </ul>
+                </div>
+                
+                <div class="tonewood-item cocobolo">
+                    <div class="tonewood-icon"><i class="fas fa-sun"></i></div>
+                    <h3 class="tonewood-name">Cocobolo</h3>
+                    <div class="tonewood-origin">Dalbergia Retusa</div>
+                    <ul class="tonewood-traits">
+                        <li>Bright, articulate</li>
+                        <li>Sparkling trebles</li>
+                        <li>Tight, punchy bass</li>
+                        <li>Excellent projection</li>
+                    </ul>
+                </div>
+                
+                <div class="tonewood-item mahogany">
+                    <div class="tonewood-icon"><i class="fas fa-tree"></i></div>
+                    <h3 class="tonewood-name">Honduran Mahogany</h3>
+                    <div class="tonewood-origin">Swietenia Macrophylla</div>
+                    <ul class="tonewood-traits">
+                        <li>Warm, woody tone</li>
+                        <li>Strong midrange</li>
+                        <li>Focused sound</li>
+                        <li>Vintage character</li>
+                    </ul>
+                </div>
+                
+                <div class="tonewood-item koa">
+                    <div class="tonewood-icon"><i class="fas fa-star"></i></div>
+                    <h3 class="tonewood-name">Hawaiian Koa</h3>
+                    <div class="tonewood-origin">Acacia Koa</div>
+                    <ul class="tonewood-traits">
+                        <li>Brilliant, focused</li>
+                        <li>Opens up over time</li>
+                        <li>Balanced response</li>
+                        <li>Unique shimmer</li>
+                    </ul>
+                </div>
+                
+                <div class="tonewood-item custom">
+                    <div class="tonewood-icon"><i class="fas fa-sliders-h"></i></div>
+                    <h3 class="tonewood-name">Custom Blends</h3>
+                    <div class="tonewood-origin">Your Creation</div>
+                    <ul class="tonewood-traits">
+                        <li>Mix tonewood traits</li>
+                        <li>Save your presets</li>
+                        <li>Share with community</li>
+                        <li>Unlimited possibilities</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <p class="bottom-note">Plus <span>20+ additional tonewoods</span> including East Indian Rosewood, Maple, Walnut, Ziricote, and more</p>
+        </div>
+        
+        <div class="wood-grain"></div>
+    </div>
+</body>
+</html>

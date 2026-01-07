@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        .slide-container {
+            width: 1280px;
+            min-height: 720px;
+            background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 50%, #0D0D0D 100%);
+            position: relative;
+            overflow: hidden;
+            font-family: 'Inter', sans-serif;
+        }
+        .spotlight {
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(ellipse at center, rgba(218, 165, 32, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .content-wrapper {
+            position: relative;
+            z-index: 10;
+            min-height: 720px;
+            padding: 50px 80px;
+        }
+        .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-label {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #DAA520;
+            margin-bottom: 12px;
+        }
+        .main-headline {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px;
+            font-weight: 700;
+            color: #F5DEB3;
+            line-height: 1.2;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+        .product-card {
+            background: rgba(139, 69, 19, 0.06);
+            border-top: 3px solid #DAA520;
+            padding: 32px 28px;
+            text-align: center;
+        }
+        .product-icon {
+            font-size: 48px;
+            color: #DAA520;
+            margin-bottom: 20px;
+        }
+        .product-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: #F5DEB3;
+            margin-bottom: 8px;
+        }
+        .product-platform {
+            font-size: 13px;
+            color: #8B4513;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 16px;
+        }
+        .product-price {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-weight: 700;
+            color: #DAA520;
+            margin-bottom: 24px;
+        }
+        .product-features {
+            list-style: none;
+            text-align: left;
+        }
+        .product-features li {
+            font-size: 14px;
+            color: #E8E8E8;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(139, 69, 19, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .product-features li:last-child {
+            border-bottom: none;
+        }
+        .feature-check {
+            color: #DAA520;
+            font-size: 12px;
+        }
+        .wood-grain {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #8B4513 0%, #DAA520 25%, #8B4513 50%, #DAA520 75%, #8B4513 100%);
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <div class="spotlight"></div>
+        
+        <div class="content-wrapper">
+            <div class="header-section">
+                <div class="section-label">Product Lineup</div>
+                <h1 class="main-headline">Three Products, One Revolutionary Technology</h1>
+            </div>
+            
+            <div class="products-grid">
+                <div class="product-card">
+                    <i class="fas fa-desktop product-icon"></i>
+                    <h3 class="product-name">FX Plugin</h3>
+                    <div class="product-platform">VST3 / AU / AAX</div>
+                    <div class="product-price">$149</div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check feature-check"></i>Full tonewood library</li>
+                        <li><i class="fas fa-check feature-check"></i>DAW integration</li>
+                        <li><i class="fas fa-check feature-check"></i>Custom preset creation</li>
+                        <li><i class="fas fa-check feature-check"></i>Lifetime updates</li>
+                    </ul>
+                </div>
+                
+                <div class="product-card">
+                    <i class="fas fa-mobile-alt product-icon"></i>
+                    <h3 class="product-name">FX Mobile</h3>
+                    <div class="product-platform">iOS / Android</div>
+                    <div class="product-price">$49</div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check feature-check"></i>Core tonewood presets</li>
+                        <li><i class="fas fa-check feature-check"></i>Audio interface support</li>
+                        <li><i class="fas fa-check feature-check"></i>Practice anywhere</li>
+                        <li><i class="fas fa-check feature-check"></i>Cloud preset sync</li>
+                    </ul>
+                </div>
+                
+                <div class="product-card">
+                    <i class="fas fa-microchip product-icon"></i>
+                    <h3 class="product-name">FX Hardware</h3>
+                    <div class="product-platform">Standalone Pedal</div>
+                    <div class="product-price">$299</div>
+                    <ul class="product-features">
+                        <li><i class="fas fa-check feature-check"></i>Zero-latency processing</li>
+                        <li><i class="fas fa-check feature-check"></i>Stage-ready durability</li>
+                        <li><i class="fas fa-check feature-check"></i>Transducer output option</li>
+                        <li><i class="fas fa-check feature-check"></i>Battery or USB-C power</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="wood-grain"></div>
+    </div>
+</body>
+</html>

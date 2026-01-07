@@ -1,17 +1,17 @@
 # Guitar Pro Tab Generation Technical Specification
 
-## Soundstar Audio-to-Tablature Pipeline
+## Starwood Audio-to-Tablature Pipeline
 
 **Version**: 1.0  
 **Author**: Manus AI  
 **Date**: January 2026  
-**Repository**: https://github.com/Mino01/Soundstar
+**Repository**: https://github.com/Mino01/Starwood
 
 ---
 
 ## Executive Summary
 
-This technical specification outlines the architecture and implementation strategy for integrating **Guitar Pro tablature generation** into the Soundstar music generation framework. The system will enable automatic transcription of AI-generated audio into playable guitar tablature, exported in industry-standard Guitar Pro formats (.gp, .gp5, .gpx).
+This technical specification outlines the architecture and implementation strategy for integrating **Guitar Pro tablature generation** into the Starwood music generation framework. The system will enable automatic transcription of AI-generated audio into playable guitar tablature, exported in industry-standard Guitar Pro formats (.gp, .gp5, .gpx).
 
 The proposed pipeline consists of three primary stages: (1) audio-to-MIDI transcription using state-of-the-art neural networks, (2) MIDI-to-tablature conversion with playability optimization, and (3) Guitar Pro file generation using open-source libraries. This document provides a comprehensive analysis of available technologies, recommended architectures, and implementation guidelines.
 
@@ -23,13 +23,13 @@ The proposed pipeline consists of three primary stages: (1) audio-to-MIDI transc
 
 Guitar tablature (commonly referred to as "tabs") is a form of musical notation that indicates instrument fingering rather than musical pitches. For guitarists, tablature provides an intuitive visual representation showing which fret to press on which string, making it significantly more accessible than traditional staff notation for learning specific songs [1].
 
-The Guitar Pro format, developed by Arobas Music, has become the de facto standard for digital tablature distribution. Websites such as Ultimate Guitar host over 200,000 user-submitted Guitar Pro files, demonstrating the format's widespread adoption [2]. Integrating tablature generation into Soundstar will enable users to not only generate music but also receive playable transcriptions suitable for practice and performance.
+The Guitar Pro format, developed by Arobas Music, has become the de facto standard for digital tablature distribution. Websites such as Ultimate Guitar host over 200,000 user-submitted Guitar Pro files, demonstrating the format's widespread adoption [2]. Integrating tablature generation into Starwood will enable users to not only generate music but also receive playable transcriptions suitable for practice and performance.
 
 ### 1.2 Objectives
 
 The Guitar Pro Tab Generation module aims to achieve the following objectives:
 
-1. **Automatic Transcription**: Convert Soundstar-generated audio into accurate MIDI representations capturing pitch, timing, and dynamics.
+1. **Automatic Transcription**: Convert Starwood-generated audio into accurate MIDI representations capturing pitch, timing, and dynamics.
 
 2. **Intelligent Tablature Assignment**: Transform MIDI note data into guitar-specific string-fret combinations that prioritize playability and idiomatic fingering patterns.
 
@@ -55,7 +55,7 @@ The tablature generation pipeline follows a three-stage architecture that separa
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────┐
-│                        SOUNDSTAR AUDIO GENERATION                           │
+│                        STARWOOD AUDIO GENERATION                           │
 │                    (RAVE-DDSP-Transformer Tri-Hybrid)                       │
 └─────────────────────────────────────────────────────────────────────────────┘
                                       │
@@ -387,7 +387,7 @@ def create_guitar_pro_file(tablature_data: list,
     # Create new song
     song = guitarpro.models.Song()
     song.title = metadata.get("title", "Untitled")
-    song.artist = metadata.get("artist", "Soundstar AI")
+    song.artist = metadata.get("artist", "Starwood AI")
     song.album = metadata.get("album", "")
     song.tempo = metadata.get("tempo", 120)
     
@@ -460,7 +460,7 @@ def create_bend_effect(bend_data: dict) -> guitarpro.models.BendEffect:
 
 ### 5.3 Web-Based Rendering with AlphaTab
 
-For web-based tablature preview, **AlphaTab** provides a comprehensive JavaScript library that renders Guitar Pro files directly in the browser [9]. Integration with the Soundstar web application:
+For web-based tablature preview, **AlphaTab** provides a comprehensive JavaScript library that renders Guitar Pro files directly in the browser [9]. Integration with the Starwood web application:
 
 ```typescript
 import { AlphaTabApi, Settings } from '@coderline/alphatab';
@@ -523,7 +523,7 @@ export class TablatureViewer {
 
 ---
 
-## 6. Integration with Soundstar
+## 6. Integration with Starwood
 
 ### 6.1 API Endpoints
 
@@ -544,7 +544,7 @@ User Request (audio_url, options)
          │
          ▼
 ┌─────────────────────────────────────┐
-│     Soundstar Tablature Service     │
+│     Starwood Tablature Service     │
 │  ┌─────────────────────────────┐    │
 │  │  1. Download/validate audio │    │
 │  │  2. Transcribe to MIDI      │    │

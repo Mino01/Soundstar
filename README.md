@@ -1,6 +1,6 @@
-# Soundstar: Next-Generation AI Music Generation Framework
+# Starwood: Next-Generation AI Music Generation Framework
 
-**Soundstar** is an open-source, production-ready framework for high-fidelity, controllable music generation. Inspired by the architectural innovations of leading commercial systems like Suno AI, Soundstar adopts a hybrid approach combining the structural control of Transformer models with the high-quality synthesis capabilities of Differentiable Digital Signal Processing (DDSP).
+**Starwood** is an open-source, production-ready framework for high-fidelity, controllable music generation. Inspired by the architectural innovations of leading commercial systems like Suno AI, Starwood adopts a hybrid approach combining the structural control of Transformer models with the high-quality synthesis capabilities of Differentiable Digital Signal Processing (DDSP).
 
 ## Key Features
 
@@ -12,7 +12,7 @@
 
 ## Architecture Overview
 
-The Soundstar architecture is a multi-stage pipeline designed for both quality and control:
+The Starwood architecture is a multi-stage pipeline designed for both quality and control:
 
 1.  **Text & Control Encoder**: Processes natural language prompts and musical conditioning (genre, tempo, key) into a unified latent representation.
 2.  **Structural Transformer**: An autoregressive model that generates a sequence of musical tokens (e.g., rhythm, harmony, and high-level structure) in the latent space.
@@ -30,8 +30,8 @@ The Soundstar architecture is a multi-stage pipeline designed for both quality a
 ### Installation
 
 ```bash
-git clone https://github.com/Mino01/Soundstar.git
-cd Soundstar
+git clone https://github.com/Mino01/Starwood.git
+cd Starwood
 pip install -r requirements.txt
 ```
 
@@ -40,9 +40,9 @@ pip install -r requirements.txt
 *(To be implemented)*
 
 ```python
-from soundstar.core.engine import SoundstarEngine
+from starwood.core.engine import StarwoodEngine
 
-engine = SoundstarEngine()
+engine = StarwoodEngine()
 prompt = "A cinematic orchestral piece with a driving rhythm and a melancholic piano melody."
 audio_file = engine.generate(prompt, duration=30, genre="Cinematic", tempo=120)
 
@@ -52,8 +52,8 @@ print(f"Generated audio saved to: {audio_file}")
 ## Project Structure
 
 ```
-Soundstar/
-├── soundstar/                # Core Python package
+Starwood/
+├── starwood/                # Core Python package
 │   ├── core/                 # Main engine, pipeline, and control logic
 │   ├── models/               # Transformer, DDSP, and Codec implementations
 │   ├── tools/                # Utility scripts (e.g., data preprocessing, model conversion)
